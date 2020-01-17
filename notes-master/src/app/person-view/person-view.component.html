@@ -1,0 +1,13 @@
+<div class="row" [ngClass]="{'bg-danger': inNote.datecomplete < formatdate }">
+  <div class="col-md-1 pt-2">{{inNote.id}}</div>
+  <div class="col-3 pt-2 pl-4">{{inNote.content}}</div>
+  <div class="col-3 pt-2 pl-4">{{inNote.datecreate}}</div>    <!-- | date:'dd.MM.yyyy' -->
+  <div class="col-2 pt-2 pl-4">{{inNote.datecomplete}}</div>
+  <div class="col-md-auto ml-10">
+      <a [routerLink]="['/edit', inNote.id]">
+        <button class="btn btn-primary">Редактировать</button>
+      </a>
+      <button class="btn btn-danger m-2" (click)="onDeleteNote()">Удалить</button>
+    </div>
+</div>
+
